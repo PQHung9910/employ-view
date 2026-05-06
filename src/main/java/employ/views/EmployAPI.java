@@ -22,7 +22,7 @@ public class EmployAPI {
     {
         return service.getList(page, size);
     }
-    
+
     // POST add
     @PostMapping("/add")
     public Employ add(@RequestBody Employ e) {
