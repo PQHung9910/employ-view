@@ -4,50 +4,30 @@
     <meta charset="UTF-8">
     <title>Employee List</title>
 
-    <style>
-        body {
-            font-family: Arial;
-            background: #f4f6f9;
-        }
-
-        table {
-            border-collapse: collapse;
-            width: 90%;
-            margin: 40px auto;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background: #007bff;
-            color: white;
-            position: sticky;
-            top: 0;
-        }
-
-        tr:nth-child(even) {
-            background: #f2f2f2;
-        }
-
-        tr:hover {
-            background: #e6f7ff;
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+<div class="header">
+    Employee Management System
+</div>
+
+<div class="search-box">
+    <input type="text" id="search" placeholder="Search employee name...">
+
+    <div>
+        <button onclick="openForm()">Add</button>
+        <button onclick="loadData()">Reload</button>
+    </div>
+</div>
+
 <table>
     <thead>
     <tr>
-        <th>Mã NV</th>
-        <th>Tên NV</th>
+        <th>Mã nhân viên</th>
+        <th>Tên nhân viên</th>
         <th>Lý do nghỉ</th>
         <th>Số ngày nghỉ</th>
     </tr>
@@ -56,25 +36,36 @@
     <tbody id="tbody"></tbody>
 </table>
 
-<script>
-    fetch("http://localhost:8080/api/users/list")
-        .then(res => res.json())
-        .then(data => {
+<div id="formBox" style="display:none; width:90%; margin:20px auto; background:white; padding:15px; border-radius:8px;">
 
-            let tbody = document.getElementById("tbody");
+    <h3>Add Employee</h3>
 
-            data.content.forEach(e => {
-                tbody.innerHTML += `
-                    <tr>
-                        <td>${e.MaNV}</td>
-                        <td>${e.TenNV}</td>
-                        <td>${e.LidoNghi}</td>
-                        <td>${e.SoNgayNghi}</td>
-                    </tr>
-                `;
-            });
-        });
-</script>
+    <input id="maNV" placeholder="MaNV"><br><br>
+    <input id="tenNV" placeholder="TenNV"><br><br>
+    <input id="lidoNghi" placeholder="Ly do nghi"><br><br>
+    <input id="soNgayNghi" placeholder="So ngay nghi"><br><br>
+
+    <button onclick="addEmployee()">Save</button>
+    <button onclick="closeForm()">Close</button>
+
+</div>
+
+<div class="pagination">
+
+    <button id="prevBtn" onclick="prevPage()">
+        ← Prev
+    </button>
+
+    <span id="pageNumber">Page 1</span>
+
+    <button id="nextBtn" onclick="nextPage()">
+        Next →
+    </button>
+
+</div>
+
+<!-- JS -->
+<script src="js/app.js"></script>
 
 </body>
 </html>

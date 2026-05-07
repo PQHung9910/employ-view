@@ -4,21 +4,21 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "employ_list")
-public class Employ
-{
+public class Employ {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int id;
+    @Column(name = "\"maNV\"")
+    public String maNV;
 
-    @Column(name = "\"MaNV\"")
-    public String MaNV;
+    @Column(name = "\"tenNV\"")
+    public String tenNV;
 
-    @Column(name = "\"TenNV\"")
-    public String TenNV;
+    @Column(name = "\"lidoNghi\"")
+    public String lidoNghi;
 
-    @Column(name = "\"LidoNghi\"")
-    public String LidoNghi;
+    @Column(name = "\"soNgayNghi\"")
+    public Integer soNgayNghi;
 
-    @Column(name = "\"SoNgayNghi\"")
-    public Integer SoNgayNghi;
+    @Column(name = "id")
+    private Integer id;
 }

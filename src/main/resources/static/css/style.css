@@ -1,0 +1,127 @@
+body {
+    font-family: Arial;
+    background: #f4f6f9;
+    margin: 0;
+}
+
+/* HEADER */
+.header {
+    background: #1e3a8a;
+    color: white;
+    padding: 15px 20px;
+    font-size: 18px;
+}
+
+/* SEARCH BAR */
+.search-box {
+    width: 90%;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-box input {
+    padding: 8px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.search-box button {
+    background: #16a34a;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/*nút Add             */
+.add-btn {
+    background: #16a34a;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
+.add-btn:hover {
+    background: #15803d;
+}
+
+/* TABLE GRID STYLE */
+table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 20px auto 40px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* HEADER */
+th {
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+/* CELL GRID */
+td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #e5e7eb;   /* tạo grid rõ */
+}
+
+/* hover row */
+tr:hover {
+    background: #f1f5f9;
+}
+
+/* ❌ BỎ background cho lý do nghỉ */
+td:nth-child(3) .badge {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+}
+
+/* optional: chỉ style nhẹ cho cột lý do nghỉ */
+td:nth-child(3) {
+    color: #111827;
+    font-weight: 500;
+}
+
+/*Prev and Next button*/
+.pagination {
+    width: 90%;
+    margin: 20px auto 40px;
+    text-align: center;
+}
+
+.pagination button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.pagination button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.pagination span {
+    font-weight: bold;
+    margin: 0 10px;
+    color: #333;
+}

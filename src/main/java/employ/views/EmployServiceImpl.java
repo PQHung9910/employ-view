@@ -11,12 +11,14 @@ public class EmployServiceImpl implements IEmployService {
     private EmployRepository repo;
 
     @Override
-    public Page<Employ> getList(int page, int size) {
+    public Page<Employ> getList(int page, int size)
+    {
         return repo.findAll(PageRequest.of(page, size));
     }
 
     @Override
-    public Employ save(Employ e) {
+    public Employ save(Employ e)
+    {
         return repo.save(e);
     }
 }
